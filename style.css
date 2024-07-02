@@ -1,7 +1,8 @@
 :root {
   --primary: #202124;
-  --contrast: #e9eaed;
   --secondary: #3c4043;
+  --tertiary: #5f6368;
+  --contrast: #e9eaed;
 
   --large: 24px;
   --extra-large: 64px;
@@ -15,17 +16,33 @@
   margin: 0;
 }
 
-#intro > h1 {
-  text-align: center;
-  font-size: var(--extra-large);
-}
-
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0 auto;
   font-size: 18px;
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline dashed;
+}
+
+#intro > h1 {
+  text-align: center;
+  font-size: var(--extra-large);
+  padding-top: 16px;
+}
+
+#outro > p {
+  text-align: center;
+  font-size: var(--large);
+  padding-bottom: 16px;
 }
 
 #calculator {
@@ -46,8 +63,8 @@ body {
   text-align: end;
 }
 
-#zenith {
-  color: var(--secondary);
+.zenith {
+  color: var(--tertiary);
 }
 
 .keyboard {
@@ -63,10 +80,6 @@ body {
   gap: 8px;
 }
 
-/* .middle {
-  display: flex;
-} */
-
 .btn {
   border-radius: 5px;
   padding: 1em 3em;
@@ -76,7 +89,6 @@ body {
   flex: auto;
 }
 
-#outro > p {
-  text-align: center;
-  font-size: var(--large);
+.outer-color {
+  background-color: var(--tertiary);
 }
