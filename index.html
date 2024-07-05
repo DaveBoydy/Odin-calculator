@@ -10,40 +10,44 @@
   <body>
     <header id="intro">
       <h1>Odin Calculator</h1>
+      <br />
+      <p>Inspired by google calc</p>
     </header>
 
     <main id="calculator">
       <div class="screen">
-        <section class="zenith">Ans = 0</section>
-        <section class="nadir">0</section>
+        <section id="meta-screen" class="zenith">Ans = 0</section>
+        <section id="accumulator-screen" class="nadir">0</section>
       </div>
-      <div class="keyboard">
+      <div id="keyboard">
         <section class="top">
-          <button class="btn outer-color">Clear</button>
-          <button class="btn outer-color">Delete</button>
+          <button class="btn outer-color" data-calculator="clear">Clear</button>
+          <button class="btn outer-color" data-calculator="delete">
+            Delete
+          </button>
         </section>
         <section class="middle">
-          <button class="btn">7</button>
-          <button class="btn">8</button>
-          <button class="btn">9</button>
-          <button class="btn outer-color">÷</button>
+          <button class="btn" data-calculator="7">7</button>
+          <button class="btn" data-calculator="8">8</button>
+          <button class="btn" data-calculator="9">9</button>
+          <button class="btn outer-color" data-calculator="divide">÷</button>
 
-          <button class="btn">4</button>
-          <button class="btn">5</button>
-          <button class="btn">6</button>
-          <button class="btn outer-color">×</button>
+          <button class="btn" data-calculator="4">4</button>
+          <button class="btn" data-calculator="5">5</button>
+          <button class="btn" data-calculator="6">6</button>
+          <button class="btn outer-color" data-calculator="multiply">×</button>
 
-          <button class="btn">1</button>
-          <button class="btn">2</button>
-          <button class="btn">3</button>
-          <button class="btn outer-color">−</button>
+          <button class="btn" data-calculator="1">1</button>
+          <button class="btn" data-calculator="2">2</button>
+          <button class="btn" data-calculator="3">3</button>
+          <button class="btn outer-color" data-calculator="minus">−</button>
         </section>
 
         <section class="bottom">
-          <button class="btn">0</button>
-          <button class="btn">.</button>
-          <button class="btn">=</button>
-          <button class="btn outer-color">+</button>
+          <button class="btn" data-calculator="0">0</button>
+          <button class="btn" data-calculator="point">.</button>
+          <button class="btn" data-calculator="equals">=</button>
+          <button class="btn outer-color" data-calculator="plus">+</button>
         </section>
       </div>
     </main>

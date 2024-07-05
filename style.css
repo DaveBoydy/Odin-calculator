@@ -33,10 +33,18 @@ a:hover {
   text-decoration: underline dashed;
 }
 
-#intro > h1 {
+#intro > h1,
+p {
   text-align: center;
+}
+
+#intro > h1 {
   font-size: var(--extra-large);
   padding-top: 16px;
+}
+
+#intro > p {
+  font-size: var(--large);
 }
 
 #outro > p {
@@ -67,7 +75,7 @@ a:hover {
   color: var(--tertiary);
 }
 
-.keyboard {
+#keyboard {
   padding: 16px 0;
 }
 
