@@ -122,19 +122,30 @@ resetCalc = () => {
 
 deleteLastItem = () => {
   if (accumulatorScreen.textContent) {
-    console.log(accumulatorScreen.textContent.length);
-    accumulatorAnswerDisplay = accumulatorAnswerDisplay.slice(0, -1);
-    accumulatorScreen.textContent = accumulatorAnswerDisplay;
+    let str = accumulatorScreen.textContent;
+
+    if (str.charAt(str.length - 1) === ".") {
+      console.log("I'm a decimal point");
+      editAccumulator(1);
+      disableDecimalPoint(false);
+    } else if (str.charAt(str.length - 1) === " ") {
+      console.log("I'm an operator");
+      editAccumulator(3);
+      disableOperators(false);
+    } else {
+      editAccumulator(1);
+      console.log("I'm an operand");
+    }
   }
 
   if (!accumulatorScreen.textContent) {
-    console.log("I'm empty");
     accumulatorScreen.textContent = "0";
   }
+};
 
-  //TODO:
-  //if remove decimal disableDecimalPoint(false);
-  //if remove blank space disableOperators(false) and remove 3 chars
+editAccumulator = (charCount) => {
+  accumulatorAnswerDisplay = accumulatorAnswerDisplay.slice(0, -charCount);
+  accumulatorScreen.textContent = accumulatorAnswerDisplay;
 };
 
 disableDecimalPoint = (activeState) => {
