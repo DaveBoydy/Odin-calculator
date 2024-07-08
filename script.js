@@ -123,6 +123,7 @@ resetCalc = () => {
 deleteLastItem = () => {
   if (accumulatorScreen.textContent) {
     const str = accumulatorScreen.textContent;
+    console.log(`I'm the content of ${str}`);
 
     if (str.charAt(str.length - 1) === ".") {
       console.log("I'm a decimal point");
@@ -189,21 +190,25 @@ operate = (operand, num1, num2) => {
 };
 
 add = (num1, num2) => {
-  accumulatorScreen.textContent = num1 + num2;
-  accumulatorAnswerDisplay = num1 + num2;
+  const total = num1 + num2;
+  accumulatorScreen.textContent = total.toString();
+  accumulatorAnswerDisplay = total.toString();
 };
 
 subtract = (num1, num2) => {
-  accumulatorScreen.textContent = num1 - num2;
-  accumulatorAnswerDisplay = num1 - num2;
+  const total = num1 - num2;
+  accumulatorScreen.textContent = total.toString();
+  accumulatorAnswerDisplay = total.toString();
 };
 
 multiply = (num1, num2) => {
-  accumulatorScreen.textContent = num1 * num2;
-  accumulatorAnswerDisplay = num1 * num2;
+  const total = num1 * num2;
+  accumulatorScreen.textContent = total.toString();
+  accumulatorAnswerDisplay = total.toString();
 };
 
 divide = (num1, num2) => {
-  accumulatorScreen.textContent = num1 / num2;
-  accumulatorAnswerDisplay = num1 / num2;
+  const total = num1 / num2;
+  accumulatorScreen.textContent = total.toString();
+  accumulatorAnswerDisplay = total.toString();
 };
