@@ -8,9 +8,9 @@ let accumulatorAnswerDisplay = "";
  * event listeners.
  */
 
-let keyboard = document.getElementById("keyboard");
-let metaScreen = document.getElementById("meta-screen");
-let accumulatorScreen = document.getElementById("accumulator-screen");
+const keyboard = document.getElementById("keyboard");
+const metaScreen = document.getElementById("meta-screen");
+const accumulatorScreen = document.getElementById("accumulator-screen");
 
 /*
  * Setup event listeners (observers) after the page 'load' event fires
@@ -122,7 +122,7 @@ resetCalc = () => {
 
 deleteLastItem = () => {
   if (accumulatorScreen.textContent) {
-    let str = accumulatorScreen.textContent;
+    const str = accumulatorScreen.textContent;
 
     if (str.charAt(str.length - 1) === ".") {
       console.log("I'm a decimal point");
@@ -160,26 +160,15 @@ disableOperators = (activeState) => {
 };
 
 parseEquation = () => {
-  console.log("parse the equation");
+  const equation = accumulatorAnswerDisplay.split(" ");
+
+  const leftOperand = equation[0];
+  const middleOperator = equation[1];
+  const rightOperand = equation[2];
+
   metaScreen.textContent = `${accumulatorAnswerDisplay} =`;
-  accumulatorScreen.textContent = "Ans";
-  accumulatorAnswerDisplay = "Ans";
-};
 
-add = () => {
-  console.log("add");
-};
-
-subtract = () => {
-  console.log("subtract");
-};
-
-multiply = () => {
-  console.log("multiply");
-};
-
-divide = () => {
-  console.log("divide");
+  operate(middleOperator, +leftOperand, +rightOperand);
 };
 
 operate = (operand, num1, num2) => {
@@ -187,14 +176,34 @@ operate = (operand, num1, num2) => {
     case "+":
       add(num1, num2);
       break;
-    case "-":
+    case "−":
       subtract(num1, num2);
       break;
-    case "multiply":
+    case "×":
       multiply(num1, num2);
       break;
-    case "divide":
+    case "÷":
       divide(num1, num2);
       break;
   }
+};
+
+add = (num1, num2) => {
+  accumulatorScreen.textContent = num1 + num2;
+  accumulatorAnswerDisplay = num1 + num2;
+};
+
+subtract = (num1, num2) => {
+  accumulatorScreen.textContent = num1 - num2;
+  accumulatorAnswerDisplay = num1 - num2;
+};
+
+multiply = (num1, num2) => {
+  accumulatorScreen.textContent = num1 * num2;
+  accumulatorAnswerDisplay = num1 * num2;
+};
+
+divide = (num1, num2) => {
+  accumulatorScreen.textContent = num1 / num2;
+  accumulatorAnswerDisplay = num1 / num2;
 };
