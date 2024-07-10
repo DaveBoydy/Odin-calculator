@@ -1,4 +1,5 @@
 let accumulatorAnswerDisplay = "";
+// let total = 0;
 
 /*
  * Referenced DOM nodes with variables for the use of
@@ -195,33 +196,29 @@ operate = (operand, num1, num2) => {
 
 add = (num1, num2) => {
   let total = num1 + num2;
-  total = roundNumber(total);
-  accumulatorScreen.textContent = total.toString();
-  accumulatorAnswerDisplay = total.toString();
+  resolveEquation(roundNumber(total));
 };
 
 subtract = (num1, num2) => {
   let total = num1 - num2;
-  total = roundNumber(total);
-  accumulatorScreen.textContent = total.toString();
-  accumulatorAnswerDisplay = total.toString();
+  resolveEquation(roundNumber(total));
 };
 
 multiply = (num1, num2) => {
   let total = num1 * num2;
-  total = roundNumber(total);
-  console.log(total);
-  accumulatorScreen.textContent = total.toString();
-  accumulatorAnswerDisplay = total.toString();
+  resolveEquation(roundNumber(total));
 };
 
 divide = (num1, num2) => {
   let total = num1 / num2;
-  total = roundNumber(total);
-  accumulatorScreen.textContent = total.toString();
-  accumulatorAnswerDisplay = total.toString();
+  resolveEquation(roundNumber(total));
 };
 
 roundNumber = (number) => {
   return Math.round(number * 1000) / 1000;
+};
+
+resolveEquation = (total) => {
+  accumulatorScreen.textContent = total.toString();
+  accumulatorAnswerDisplay = total.toString();
 };
