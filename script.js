@@ -1,6 +1,3 @@
-let operand1 = 0;
-let operand2 = 0;
-let numOperator = "";
 let accumulatorAnswerDisplay = "";
 
 /*
@@ -165,6 +162,13 @@ parseEquation = () => {
 
   const leftOperand = equation[0];
   const middleOperator = equation[1];
+
+  if (equation[2] === "0") {
+    alert("you can't use zero! try again with a sensible value.");
+    resetCalc();
+    return;
+  }
+
   const rightOperand = equation[2];
 
   metaScreen.textContent = `${accumulatorAnswerDisplay} =`;
@@ -190,25 +194,34 @@ operate = (operand, num1, num2) => {
 };
 
 add = (num1, num2) => {
-  const total = num1 + num2;
+  let total = num1 + num2;
+  total = roundNumber(total);
   accumulatorScreen.textContent = total.toString();
   accumulatorAnswerDisplay = total.toString();
 };
 
 subtract = (num1, num2) => {
-  const total = num1 - num2;
+  let total = num1 - num2;
+  total = roundNumber(total);
   accumulatorScreen.textContent = total.toString();
   accumulatorAnswerDisplay = total.toString();
 };
 
 multiply = (num1, num2) => {
-  const total = num1 * num2;
+  let total = num1 * num2;
+  total = roundNumber(total);
+  console.log(total);
   accumulatorScreen.textContent = total.toString();
   accumulatorAnswerDisplay = total.toString();
 };
 
 divide = (num1, num2) => {
-  const total = num1 / num2;
+  let total = num1 / num2;
+  total = roundNumber(total);
   accumulatorScreen.textContent = total.toString();
   accumulatorAnswerDisplay = total.toString();
+};
+
+roundNumber = (number) => {
+  return Math.round(number * 1000) / 1000;
 };

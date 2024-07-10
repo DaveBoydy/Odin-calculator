@@ -3,6 +3,7 @@
   --secondary: #3c4043;
   --tertiary: #5f6368;
   --contrast: #e9eaed;
+  /* --cream-grey: #c5bebe; */
 
   --large: 24px;
   --extra-large: 64px;
@@ -17,6 +18,7 @@
 }
 
 body {
+  /* background-color: var(--cream-grey); */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -69,6 +71,11 @@ p {
   border-radius: 15px;
   padding: 10px;
   text-align: end;
+}
+
+#meta-screen, #accumulator-screen {
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .zenith {
